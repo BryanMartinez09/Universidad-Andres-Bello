@@ -1,0 +1,148 @@
+
+body, html {
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    height: 100%;
+    margin: 0;
+}
+
+.main-container {
+    scroll-snap-type: y mandatory; /* Snap vertical obligatorio */
+    overflow-y: scroll;
+    height: 100vh; /* Altura de toda la ventana */
+    padding-top: 80px; /* Espacio superior para que las secciones no queden detrás del header */
+}
+
+/* Header fijo */
+.header {
+    background: rgba(0, 115, 230, 0.8); /* Color azul con opacidad */
+    color: white;
+    padding: 20px 0;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Configuración para cada sección */
+section {
+    height: 100vh; /* Cada sección ocupa toda la altura de la pantalla */
+    scroll-snap-align: start; /* Inicia el snap en la parte superior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ccc; /* Línea divisoria entre secciones */
+}
+
+/* Ajuste específico para la primera sección debajo del header */
+#inicio {
+    padding-top: 100px; /* Espacio superior adicional para evitar que quede cubierto */
+}
+
+
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el ícono de menú y el logo */
+}
+
+.menu-icon img {
+    width: 30px; /* Tamaño del ícono del menú */
+    height: auto;
+}
+
+.logo-unab {
+    width: 100px; /* Ajusta el tamaño del logo según prefieras */
+    height: auto;
+}
+
+
+.navbar {
+    display: none; /* Ocultar por defecto */
+}
+
+.navbar.active {
+    display: block; /* Mostrar cuando está activa */
+    position: absolute; /* Mantener la posición del menú */
+    left: 0;
+    top: 60px; /* Ajusta según la altura del header */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+
+.navbar ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.navbar ul li {
+    padding: 10px 20px;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.social-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px; /* Espacio entre los íconos */
+}
+
+.social-icons img {
+    width: 30px; /* Tamaño de los íconos */
+    height: auto; /* Mantiene la proporción */
+}
+
+.universidad, .carreras, .alumnos, .contacto {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.portada-content {
+    text-align: center;
+}
+
+.carreras-grid, .alumnos-grid {
+    display: grid; /* Usa grid para la disposición */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajusta las columnas */
+    gap: 10px; /* Espacio entre los elementos */
+    width: 100%; /* Ancho completo */
+}
+
+.carrera, .alumno {
+    position: relative; /* Necesario para el efecto hover */
+}
+
+.carrera img, .alumno img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Cubre el contenedor sin distorsionar la imagen */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.carrera img:hover, .alumno img:hover {
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+    filter: contrast(120%); /* Aumenta el contraste */
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

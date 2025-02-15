@@ -1,0 +1,167 @@
+.bg-image {
+    background-image: url('img/portadaUnab.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .bg-image {
+        background-attachment: scroll; /* En móviles se quita el fondo fijo */
+        background-position: top center; /* Ajustar la posición del fondo para mejor visibilidad */
+    }
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Oscurece la imagen */
+    z-index: 1;
+    padding-bottom: 100px;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.section-container{
+    background-color:white;
+    background-image: url('img/bg-ola-azul.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.section-container2{
+    background-color:#f2f2f2;
+    background-image: url('img/bg-ola-blanca.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.shadows{
+    -webkit-box-shadow: -5px 4px 16px 5px rgba(0,0,0,0.40);
+    -moz-box-shadow: -5px 4px 16px 5px rgba(0,0,0,0.40);
+    box-shadow: -5px 4px 16px 5px rgba(0,0,0,0.40);
+}
+
+.carreras-img {
+    width: 100%; /* ancho deseado */
+    height: 200px; /* alto deseado */
+    object-fit: cover; /* mantiene el enfoque central y recorta si es necesario */
+    transition: transform 0.4s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformaciones y efectos */
+}
+
+/* Efecto de brillo */
+.carreras-img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen en un 5% */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Efecto de brillo */
+    filter: blur(2px); /* Aplica desenfoque */
+}
+
+.card {
+    transition: transform 0.4s ease; /* Transición suave */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta en un 5% */
+}
+
+/* Estilos para las tarjetas de alumnos */
+.alumno-card {
+    position: relative;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para las imágenes de los alumnos */
+.alumno-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.4s ease;
+    -webkit-box-shadow: -5px 4px 9px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 4px 9px -3px rgba(0,0,0,0.75);
+    box-shadow: -5px 4px 9px -3px rgba(0,0,0,0.75);
+}
+
+/* Estilos generales para el nombre del alumno */
+.alumno-name {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    max-width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    position: relative;
+    bottom: -50px; /* Inicialmente fuera de la vista (debajo de la imagen) */
+    opacity: 0; /* Inicialmente oculto */
+    transition: all 0.3s ease; /* Transición suave */
+    color: #1b2c9b; /* Azul oscuro cuando el fondo es claro */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 5px 10px; /* Añade un poco de espacio alrededor del nombre */
+}
+
+/* Cuando se muestra el nombre (en azul claro o celeste) sobre fondo oscuro */
+.alumno-card.dark-bg .alumno-name.active {
+    bottom: -20px; /* Muestra el nombre en la parte inferior de la tarjeta */
+    opacity: 1; /* Hace el nombre visible */
+    color: #00bcd4; /* Azul claro (celeste) cuando el fondo es oscuro */
+}
+
+/* Cuando se muestra el nombre sobre fondo claro */
+.alumno-card.light-bg .alumno-name.active {
+    bottom: -20px; /* Muestra el nombre en la parte inferior de la tarjeta */
+    opacity: 1; /* Hace el nombre visible */
+    color: #1b2c9b; /* Azul oscuro cuando el fondo es claro */
+}
+
+/* Efecto cuando el ratón pasa sobre la tarjeta */
+.alumno-card:hover .alumno-name {
+    bottom: -20px; /* Desliza el nombre hasta la parte inferior de la tarjeta */
+    opacity: 1; /* Hace el nombre visible */
+}
+
+/* Efecto en dispositivos móviles */
+@media (max-width: 768px) {
+    .alumno-name {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .alumno-img {
+        height: 120px;
+    }
+}
+
+.alumno-img:hover{
+    transform: scale(1.05);
+}
+
+.card{
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.text-color-site {
+    color:#1b2c9b !important;
+}
+
+.bg-color-site {
+    background-color:#1b2c9b !important;
+}
